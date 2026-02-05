@@ -1,0 +1,313 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    padding: 20px;
+
+}
+
+h1, h2 {
+    text-align: center;
+}
+.rw{
+    display: flex;
+    width: fit-content;
+    justify-self: center;
+    align-self: center;
+
+}
+.rw label{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+.rw-l{
+     display: flex;
+    width: fit-content;
+    justify-self: center;
+    align-self: center;
+    gap: 10px;
+}
+#date {
+    text-align: center;
+    font-weight: bold;
+}
+
+#datePicker {
+    display: block;
+    margin: 10px auto;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#monthPicker {
+    display: block;
+    margin: 10px auto;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#departmentSelect {
+    display: block;
+    margin: 10px auto;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#searchInput {
+    width: 50%;
+    padding: 10px;
+    margin: 15px 0;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background: #343a40;
+    color: white;
+}
+
+button {
+    padding: 6px 10px;
+    margin: 3px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.present { background: #28a745; }
+.absent { background: #dc3545; }
+.permission { background: #ffc107; color: #000; }
+
+.active {
+    border: 2px solid #000;
+    font-weight: bold;
+}
+
+.active::after {
+    content: " ✓";
+    color: #000;
+    font-weight: bold;
+}
+
+#downloadPdfBtn {
+    margin: 10px auto;
+    display: block;
+    background: #28a745;
+    color: #fff;
+}
+
+#viewReportBtn {
+    margin: 10px auto;
+    display: block;
+    background: #17a2d7;
+    color: #fff;
+}
+
+#reportTable {
+    display: none;
+    width: auto;
+    min-width: 100%;
+    white-space: nowrap;
+}
+
+#reportTable th, #reportTable td {
+    font-size: 10px;
+    padding: 6px;
+}
+
+#tableWrapper {
+    overflow-x: auto;
+    margin-top: 10px;
+}
+
+#addEmployeeContainer {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    h1, h2 {
+        font-size: 1.5em;
+    }
+
+    #searchInput {
+        font-size: 14px;
+        padding: 8px;
+        width: 90%;
+    }
+
+    #datePicker {
+        font-size: 14px;
+        padding: 6px;
+    }
+
+    #monthPicker {
+        font-size: 14px;
+        padding: 6px;
+    }
+
+    #departmentSelect {
+        font-size: 14px;
+        padding: 6px;
+    }
+
+    #addDepartmentBtn {
+        padding: 4px;
+        font-size: 12px;
+        text-align: center;
+        width: fit-content;
+        height: fit-content;
+    }
+
+    #addEmployeeContainer {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .rw-l{
+     display: flex;
+     flex-direction: column;
+    width: fit-content;
+    justify-self: center;
+    align-self: center;
+}
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 8px;
+        font-size: 8px;
+    }
+    button {
+        padding: 6px;
+        font-size: 8px;
+    }
+
+    #downloadPdfBtn, #viewReportBtn {
+        margin: 5px;
+        display: inline-block;
+        padding: 6px;
+    }
+    label{
+        font-size: 14px;
+    }
+    #reportTable th, #reportTable td {
+        font-size: 6px;
+        padding: 2px;
+        word-wrap: break-word;
+    }
+    #tableWrapper {
+        overflow-x: auto;
+        margin-top: 10px;
+        max-width: calc(100vw - 20px);
+        -webkit-overflow-scrolling: touch;
+    }
+    #reportTable {
+        display: none;
+        width: auto;
+        white-space: nowrap;
+        table-layout: fixed;
+        border-collapse: collapse;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 5px;
+    }
+
+    h1, h2 {
+        font-size: 1.2em;
+    }
+
+    #searchInput {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    #datePicker {
+        font-size: 12px;
+        padding: 4px;
+    }
+
+    #monthPicker {
+        font-size: 12px;
+        padding: 4px;
+    }
+
+    #departmentSelect {
+        font-size: 12px;
+        padding: 4px;
+    }
+
+    #addDepartmentBtn {
+        padding: 2px 4px;
+        font-size: 10px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 4px;
+        min-width: 60px;
+    }
+
+    button {
+        padding: 2px 4px;
+        font-size: 8px;
+        margin: 1px;
+    }
+
+    .active {
+        border: 1px solid #000;
+        font-weight: bold;
+    }
+
+    #downloadPdfBtn, #viewReportBtn {
+        margin: 5px;
+        display: inline-block;
+    }
+}

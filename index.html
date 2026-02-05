@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Attendance System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="rw">
+        <img src="pic.jpg" alt="" width="40px" height="40px" style="border-radius: 50%;">
+        <h1 style="text-align: center;display: flex;justify-content: center;align-items: center;margin-left: 10px;">Employee's Attendance</h1>
+    </div>
+    <p id="date"></p>
+    <div class="rw-l">
+
+        <div class="rw">
+
+            <label for="datePicker">Select Date:</label>
+            <input type="date" id="datePicker" />
+        </div>
+        <div class="rw">
+
+            <label for="departmentSelect">Select Department:</label>
+            <select id="departmentSelect">
+                <!-- Options will be populated dynamically -->
+            </select>
+        </div>
+        <div class="rw" >
+            <label for="newDepartmentInput">New Department:</label>
+            <input type="text" id="newDepartmentInput" placeholder="Enter department name" style="margin: 10px 0; padding: 7px; width:70%;border: 1px solid gray;border-radius: 6px;"/>
+            <div class="rw">
+                <button id="addDepartmentBtn" style="background-color: rgb(65, 170, 65);width: fit-content;padding: 7px;">Add</button>
+                <button id="removeDepartmentBtn" style="background-color: rgb(170, 65, 65);width: fit-content;padding: 7px;height: fit-content;">Remove</button>
+            </div>
+        </div>
+    </div>
+    <input type="text" id="searchInput" placeholder="Search employee..." />
+
+    <table>
+        <thead>
+            <tr>
+                <th>Employee Name</th>
+                <th>Attendance</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="employeeTable"></tbody>
+    </table>
+
+    <div id="pdfContent">
+        <h2>Monthly Attendance Report</h2>
+        <div class="rw">
+
+            <label for="monthPicker">Select Month:</label>
+            <input type="month" id="monthPicker" />
+        </div>
+        <div class="rw">
+
+            <button id="viewReportBtn">View Monthly Report</button>
+            <button id="downloadPdfBtn" style="margin-left: 10px;">Download PDF Report</button>
+        </div>
+
+        <input type="text" id="reportSearchInput" placeholder="Search employee..." style="margin: 10px 0; padding: 7px; width:70%;border: 1px solid gray;border-radius: 6px;" />
+
+        <div id="tableWrapper">
+            <table id="reportTable">
+                <thead>
+                    <tr>
+                        <th>Employee</th>
+                        <th>Present</th>
+                        <th>Absent</th>
+                        <th>Permission</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script_clean.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+</body>
+</html>
