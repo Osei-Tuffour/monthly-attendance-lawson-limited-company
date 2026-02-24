@@ -445,8 +445,18 @@ const presetEmployeesData = {
 };
 
 let employeesData = JSON.parse(localStorage.getItem('employeesData')) || {};
-employeesData = { ...presetEmployeesData, ...employeesData };
+
+// Merge carefully: Add any missing departments from preset, but don't overwrite existing ones
+for (let dept in presetEmployeesData) {
+    if (!employeesData[dept]) {
+        // Only add the department if it doesn't exist in localStorage
+        employeesData[dept] = presetEmployeesData[dept];
+    }
+}
+
+// Save back to localStorage
 localStorage.setItem('employeesData', JSON.stringify(employeesData));
+
 // Migrate old employees data to new structure
 if (localStorage.getItem('employees') && !localStorage.getItem('employeesData')) {
     const oldEmployees = JSON.parse(localStorage.getItem('employees'));
@@ -1114,5 +1124,6 @@ reportSearchInput.addEventListener('keyup', () => {
         }
     }
 });
+
 
 
