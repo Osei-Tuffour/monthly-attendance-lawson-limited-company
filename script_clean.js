@@ -14,6 +14,28 @@ const presetEmployeesData = {
         "Owusu Mensah Brampah",
         "Amofa Ernest Peprah"
     ],
+    "Administration":[
+
+"Adinu Mary",
+"Oteng Priscilla",
+"Owusu-Ansah Edmund",
+"Opoku Clinton",
+"Asare Godfred",
+"Baah Acheamfour Prince Snr.",
+"Ahmed Ibrahim Sheikh",
+"Brown Rebecca",
+"Ahenkan Anthony Akowuah",
+"Osei-Bonsu Francis",
+"Anarfi Michael Prince",
+"Owusu Prince Junior",
+"Opoku Awuah Emmanuel Shane",
+"Agyapong Abigail",
+"Andoh-Dehyie Nana Freeman",
+"Agyei Emmanuel",
+"Larbi Millicent Yeboah ",
+"Owusu Cosby Asare",
+"Amoakohene Rita"
+    ],
     "Packaging 1": [      "Mensah Mary(S)",
         "Opoku Elizabeth(A.S)",
         "Frimpong Clement(A.S)",
@@ -1092,4 +1114,5 @@ reportSearchInput.addEventListener('keyup', () => {
         }
     }
 });
+
 
