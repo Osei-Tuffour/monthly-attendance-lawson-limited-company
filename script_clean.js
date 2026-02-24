@@ -872,7 +872,7 @@ downloadPdfBtn.addEventListener("click", () => {
             const dateKey = date.toISOString().split('T')[0];
             const data = JSON.parse(localStorage.getItem(dateKey)) || {};
             const status = data[emp] ? statusAbbrev[data[emp]] : '-';
-            if (status === 'P') presentDays++;
+            if (status === '1') presentDays++;
             row.push(status);
         });
 
@@ -972,7 +972,7 @@ viewReportBtn.addEventListener("click", () => {
                 const dateKey = date.toISOString().split('T')[0];
                 const data = JSON.parse(localStorage.getItem(dateKey)) || {};
                 const status = data[emp] ? statusAbbrev[data[emp]] : "-";
-                if (status === "P") presentDays++;
+                if (status === "1") presentDays++;
                 rowHtml += `<td>${status}</td>`;
             });
 
@@ -1046,9 +1046,9 @@ reportSearchInput.addEventListener('keyup', () => {
                     }
 
                     const statusAbbrev = {
-                        present: "P",
-                        absent: "A",
-                        permission: "Perm"
+                        present: "1",
+                        absent: "0",
+                        permission: "P"
                     };
 
                     // Create header row
@@ -1068,7 +1068,7 @@ reportSearchInput.addEventListener('keyup', () => {
                             const dateKey = date.toISOString().split('T')[0];
                             const data = JSON.parse(localStorage.getItem(dateKey)) || {};
                             const status = data[emp] ? statusAbbrev[data[emp]] : "-";
-                            if (status === "P") presentDays++;
+                            if (status === "1") presentDays++;
                             rowHtml += `<td>${status}</td>`;
                         });
 
@@ -1092,3 +1092,4 @@ reportSearchInput.addEventListener('keyup', () => {
         }
     }
 });
+
